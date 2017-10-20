@@ -1,0 +1,8 @@
+.pad-wrapper {
+    width: 6.25rem;
+    height: 6.25rem;
+    border: 0.0625rem solid gray;
+    cursor: pointer;
+    user-select: none;
+    text-transform: uppercase;
+}

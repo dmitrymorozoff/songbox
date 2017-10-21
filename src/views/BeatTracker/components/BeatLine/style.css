@@ -1,0 +1,31 @@
+.beatline-wrapper {
+    display: flex;
+}
+
+.beatline-title {
+    width: 80px;
+    padding-left: 10px;
+}
+
+.beatline-beat {
+    width: 20px;
+    height: 25px;
+    border: 1px solid gray;
+    margin: 2px;
+}
+
+.beatline-beat.tracking {
+    background: lavender;
+}
+
+.beatline-beat.active {
+    background: cornflowerblue;
+}
+
+.beatline-beat:hover {
+    background: lightskyblue;
+}
+
+.beatline {
+    display: flex;
+}

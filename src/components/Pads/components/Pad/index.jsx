@@ -4,7 +4,7 @@ import Sound from "../../../../helpers/sound";
 import "./style.css";
 import { connect } from "react-redux";
 import { PadsActions } from "../../actions";
-var audioContext = new (window.AudioContext || window.webkitAudioContext)();
+import { audioContext } from "../../../../views/App";
 
 class Pad extends Component {
     static propTypes = {
@@ -48,7 +48,7 @@ class Pad extends Component {
                 this.sound.loadSoundFile();
                 this.sound.changeVolume(this.state.volume);
                 this.sound.play();
-                this.props.play({ title: "", url: "" });
+                // this.props.play({ title: "", url: "" });
             }
         }
     };

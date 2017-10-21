@@ -2,26 +2,22 @@ import React from "react";
 import Pad from "./components/Pad";
 import "./style.css";
 import { connect } from "react-redux";
-import bass from "../../sounds/bass_drum.wav";
+import bass from "../../sounds/Bass_Hit.wav";
 import snare from "../../sounds/snare_drum.wav";
-import closeHiHat from "../../sounds/cl_hi_hat.wav";
+import closeHiHat from "../../sounds/Hi_Hat_Closed.wav";
 import cymbal from "../../sounds/cymbal.wav";
 import PropTypes from "prop-types";
-import openHiHat from "../../sounds/o_hi_hat.wav";
+import openHiHat from "../../sounds/Hi_Hat_Short.wav";
 import cowbell from "../../sounds/cowbell.wav";
 import clap from "../../sounds/hand_clap.wav";
-import rimshot from "../../sounds/rim_shot.wav";
-import tom from "../../sounds/hi_tom.wav";
+import rimshot from "../../sounds/Rimshot.wav";
+import tom from "../../sounds/Tom_Mid.wav";
 import { PadsActions } from "./actions";
 
 class Pads extends React.Component {
     static propTypes = {
-        play: PropTypes.func,
-        pads: PropTypes.object
+        play: PropTypes.func
     };
-    constructor(props) {
-        super(props);
-    }
     componentWillMount() {
         document.addEventListener("keydown", this.onKeyPressed.bind(this));
     }
@@ -135,7 +131,6 @@ class Pads extends React.Component {
 const mapStateToProps = state => {
     return { pads: state.padsReducer.pads };
 };
-
 const mapDispatchToProps = dispatch => {
     return {
         play: data => {
@@ -143,5 +138,4 @@ const mapDispatchToProps = dispatch => {
         }
     };
 };
-
 export default connect(mapStateToProps, mapDispatchToProps)(Pads);

@@ -6,7 +6,6 @@ import "./style.css";
 
 class DrumPads extends React.Component {
     onChangeVolume = event => {
-        console.log(event.target.value);
         this.props.changeVolume(event.target.value);
     };
     render() {

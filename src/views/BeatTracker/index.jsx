@@ -14,6 +14,8 @@ import tambourine from "../../sounds/Tambourine.wav";
 import rimshot from "../../sounds/Rimshot.wav";
 import { BeatTrackerActions } from "./actions";
 import { connect } from "react-redux";
+import Patterns from "../../components/Patterns/";
+import "./style.css";
 
 class BeatTracker extends Component {
     constructor(props) {
@@ -61,15 +63,18 @@ class BeatTracker extends Component {
     render() {
         return (
             <div className="beat-tracker-wrapper">
-                <button onClick={this.handleStartClick}>Start</button>
-                <input
-                    type="range"
-                    min="60"
-                    max="200"
-                    step="1"
-                    onChange={this.handleChangeBPM}
-                />
-                {this.renderBeatLine()}
+                <div className="beat-tracker-control">
+                    <button onClick={this.handleStartClick}>Start</button>
+                    <input
+                        type="range"
+                        min="60"
+                        max="200"
+                        step="1"
+                        onChange={this.handleChangeBPM}
+                    />
+                </div>
+                <div className="beat-line-wrapper">{this.renderBeatLine()}</div>
+                <Patterns />
             </div>
         );
     }

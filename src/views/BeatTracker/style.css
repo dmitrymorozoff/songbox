@@ -1,0 +1,13 @@
+.beat-tracker-wrapper {
+    display: flex;
+}
+
+.beat-line-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.beat-tracker-control{
+    display: flex;
+    flex-direction: column;
+}

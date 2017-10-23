@@ -12,7 +12,7 @@ export default class App extends React.Component {
                     <div>
                         <Link to="/drumpads">DrumPads</Link>
                         <Link to="/beattracker">BeatTracker</Link>
-                        <a>Synth</a>
+                        <Link to="/synth">Synth</Link>
                         <a>Keys</a>
                     </div>
                     <div className="app-content">{routes}</div>

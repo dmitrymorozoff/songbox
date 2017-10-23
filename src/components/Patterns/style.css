@@ -1,0 +1,20 @@
+.patterns-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid gray;
+    width: 134px;
+    align-content: flex-start;
+}
+
+.pattern-item {
+    width: 60px;
+    margin: 2px;
+    height: 60px;
+    border: 1px solid lightgray;
+    margin-bottom: auto;
+    cursor: pointer;
+}
+
+.pattern-item:hover {
+    background: lightskyblue;
+}

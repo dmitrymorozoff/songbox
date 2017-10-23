@@ -1,0 +1,60 @@
+.synth-wrapper {
+    display: flex;
+    position: relative;
+}
+
+.synth-white-key {
+    width: 30px;
+    height: 160px;
+    border: 1px solid gray;
+    cursor: pointer;
+}
+
+.synth-black-key {
+    width: 20px;
+    position: absolute;
+    height: 80px;
+    background: black;
+    border: 1px solid gray;
+    cursor: pointer;    
+}
+
+.synth-black-key--1 {
+    left: 20px;
+}
+
+.synth-black-key--2 {
+    left: 53px;
+}
+
+.synth-black-key--3 {
+    left: 120px;
+}
+
+.synth-black-key--4 {
+    left: 150px;
+}
+
+.synth-black-key--5 {
+    left: 180px;
+}
+
+.synth-black-key--6 {
+    left: 245px;
+}
+
+.synth-black-key--7 {
+    left: 278px;
+}
+
+.synth-black-key--8 {
+    left: 310px;
+}
+
+.synth-black-key--9 {
+    left: 375px;
+}
+
+.synth-black-key--10 {
+    left: 405px;
+}

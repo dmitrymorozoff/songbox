@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import Sound from "../../../../helpers/sound";
 import "./style.css";
 import { audioContext } from "../../../App";
+import patternOne from "./patterns/";
 
 class BeatLine extends Component {
     static propTypes = {
@@ -79,13 +80,17 @@ class BeatLine extends Component {
         let beatline = [];
         let trackingClass = "";
         let activeClass = "";
+        let preset = null;
+        let flag = false;
         for (let i = 0; i < this.props.countCubes; i++) {
             if (this.state.currentTrackingBeat === i) {
                 trackingClass = "tracking";
             }
+
             if (this.state.activeBeats[i]) {
                 activeClass = "active";
             }
+
             beatline.push(
                 <div
                     className={`beatline-beat ${trackingClass} ${activeClass}`}
@@ -110,6 +115,42 @@ class BeatLine extends Component {
             clearInterval(this.state.tickerId);
             this.tracking(nextProps.beatTracker.trackingStatus);
         }
+        if (
+            nextProps.patterns.activePattern.active !==
+            this.props.patterns.activePattern.active
+        ) {
+            let preset = null;
+            if (!nextProps.patterns.activePattern.active) {
+                preset = [];
+                this.setState({
+                    activeBeats: [...preset]
+                });
+            } else {
+                console.log(nextProps.patterns.activePattern.id);
+                switch (parseInt(nextProps.patterns.activePattern.id, 10)) {
+                    case 1:
+                        switch (this.props.title) {
+                            case "Bass":
+                                preset = [...patternOne["Bass"]];
+                                this.setState({
+                                    activeBeats: [...preset]
+                                });
+                                break;
+                            case "Snare":
+                                preset = [...patternOne["Snare"]];
+                                this.setState({
+                                    activeBeats: [...preset]
+                                });
+                                break;
+                            default:
+                                break;
+                        }
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
     }
     render() {
         return (
@@ -123,7 +164,10 @@ class BeatLine extends Component {
     }
 }
 const mapStateToProps = state => {
-    return { beatTracker: state.beatTrackerReducer };
+    return {
+        beatTracker: state.beatTrackerReducer,
+        patterns: state.patternReducer
+    };
 };
 const mapDispatchToProps = dispatch => {
     return {};

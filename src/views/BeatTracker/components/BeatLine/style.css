@@ -4,28 +4,54 @@
 
 .beatline-title {
     width: 80px;
-    padding-left: 10px;
+    font-size: 12px;
+    color: #e5e5e9;
+    background: rgb(35, 40, 65);
+    margin-right: 20px;
+    border-radius: 3px;
+    margin-bottom: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .beatline-beat {
-    width: 20px;
-    height: 25px;
-    border: 1px solid gray;
+    width: 30px;
+    height: 30px;
+    border-radius: 3px;
+    cursor: pointer;
+    background: rgb(35, 40, 65);
     margin: 2px;
+    z-index: 999;
 }
 
 .beatline-beat.tracking {
-    background: lavender;
+    background: rgb(37, 42, 68);
 }
 
 .beatline-beat.active {
-    background: cornflowerblue;
+    background: #6239ed;
+    box-shadow: 0 1px 20px rgba(113, 59, 240, 0.4);
+    animation: pulse 1s ease-in-out;
 }
 
 .beatline-beat:hover {
-    background: lightskyblue;
+    background: #31d7da;
 }
 
 .beatline {
     display: flex;
+    margin-right: 20px;
+}
+
+@keyframes pulse {
+    0% {
+        background: #6239ed;
+    }
+    50% {
+        background: #31d7da;
+    }
+    100% {
+        background: #6239ed;
+    }
 }

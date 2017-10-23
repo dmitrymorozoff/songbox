@@ -1,0 +1,25 @@
+.patterns-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    width: 134px;
+    align-content: flex-start;
+}
+
+.pattern-item {
+    width: 60px;
+    margin: 2px;
+    height: 60px;
+    cursor: pointer;
+    font-size: 12px;
+    color: #e5e5e9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 11px;
+    border-radius: 3px;
+    background: rgb(35, 40, 65);
+}
+
+.pattern-item:hover {
+    background: #31d7da;
+}

@@ -2,7 +2,7 @@ import { BEAT_TRACKER } from "./actions";
 
 const initialState = {
     trackingStatus: false,
-    bpm: 60
+    bpm: 130
 };
 
 export default function beatTrackerReducer(state = initialState, action) {

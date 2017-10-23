@@ -1,0 +1,41 @@
+.app {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    width: 900px;
+    height: 550px;
+
+    border-radius: 3px;
+}
+
+.navbar {
+    display: flex;
+}
+
+.navbar-link {
+    font-size: 12px;
+    color: #e5e5e9;
+    background: rgb(35, 40, 65);
+    text-decoration: none;
+    padding: 10px 25px;
+    margin: 2px;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 3px;
+}
+
+.navbar-link:hover {
+    background: #3260fc;
+}
+
+button {
+    font-size: 12px;
+    padding: 10px 25px;
+    border-radius: 3px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: #fff;
+    margin: 2px;
+    background-image: linear-gradient(to right, #3260fc, #2d59e9);
+}

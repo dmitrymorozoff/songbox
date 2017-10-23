@@ -1,8 +1,15 @@
 .pad-wrapper {
     width: 6.25rem;
     height: 6.25rem;
-    border: 0.0625rem solid gray;
+    color: #e5e5e9;
     cursor: pointer;
     user-select: none;
     text-transform: uppercase;
+    background: rgb(35, 40, 65);
+    margin: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 11px;
+    border-radius: 3px;
 }

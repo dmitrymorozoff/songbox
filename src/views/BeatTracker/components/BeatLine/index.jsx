@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import Sound from "../../../../helpers/sound";
 import "./style.css";
 import { audioContext } from "../../../App";
+import patternOne from "./patterns/";
 
 class BeatLine extends Component {
     static propTypes = {
@@ -80,13 +81,17 @@ class BeatLine extends Component {
         let beatline = [];
         let trackingClass = "";
         let activeClass = "";
+        let preset = null;
+        let flag = false;
         for (let i = 0; i < this.props.countCubes; i++) {
             if (this.state.currentTrackingBeat === i) {
                 trackingClass = "tracking";
             }
+
             if (this.state.activeBeats[i]) {
                 activeClass = "active";
             }
+
             beatline.push(
                 <div
                     className={`beatline-beat ${trackingClass} ${activeClass}`}
@@ -111,10 +116,100 @@ class BeatLine extends Component {
             clearInterval(this.state.tickerId);
             this.tracking(nextProps.beatTracker.trackingStatus);
         }
+        if (
+            nextProps.patterns.activePattern.active !==
+            this.props.patterns.activePattern.active
+        ) {
+            let preset = null;
+            if (!nextProps.patterns.activePattern.active) {
+                preset = [];
+                this.setState({
+                    activeBeats: [...preset]
+                });
+            } else {
+                console.log(nextProps.patterns.activePattern.id);
+                switch (parseInt(nextProps.patterns.activePattern.id, 10)) {
+                    case 1:
+                        switch (this.props.title) {
+                            case "Kick":
+                                preset = [...patternOne["Kick"]];
+                                this.setState({
+                                    activeBeats: [...preset]
+                                });
+                                break;
+                            case "Snare":
+                                preset = [...patternOne["Snare"]];
+                                this.setState({
+                                    activeBeats: [...preset]
+                                });
+                                break;
+                            case "Perc":
+                                preset = [...patternOne["Perc"]];
+                                this.setState({
+                                    activeBeats: [...preset]
+                                });
+                                break;
+                            case "Bleep":
+                                preset = [...patternOne["Bleep"]];
+                                this.setState({
+                                    activeBeats: [...preset]
+                                });
+                                break;
+                            case "HiHat":
+                                preset = [...patternOne["HiHat"]];
+                                this.setState({
+                                    activeBeats: [...preset]
+                                });
+                                break;
+                            case "Conga":
+                                preset = [...patternOne["Conga"]];
+                                this.setState({
+                                    activeBeats: [...preset]
+                                });
+                                break;
+                            case "DigConga":
+                                preset = [...patternOne["DigConga"]];
+                                this.setState({
+                                    activeBeats: [...preset]
+                                });
+                                break;
+                            case "LowConga":
+                                preset = [...patternOne["LowConga"]];
+                                this.setState({
+                                    activeBeats: [...preset]
+                                });
+                                break;
+                            case "Tom":
+                                preset = [...patternOne["Tom"]];
+                                this.setState({
+                                    activeBeats: [...preset]
+                                });
+                                break;
+                            case "Rimshot":
+                                preset = [...patternOne["Rimshot"]];
+                                this.setState({
+                                    activeBeats: [...preset]
+                                });
+                                break;
+                            case "Cymbal":
+                                preset = [...patternOne["Cymbal"]];
+                                this.setState({
+                                    activeBeats: [...preset]
+                                });
+                                break;
+                            default:
+                                break;
+                        }
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
     }
     render() {
         return (
-            <div className="beat-tracker-wrapper">
+            <div className="beat-line-wrapper">
                 <div className="beatline-wrapper">
                     <div className="beatline-title">{this.props.title}</div>
                     <div className="beatline">{this.renderBeatLine()}</div>
@@ -124,7 +219,10 @@ class BeatLine extends Component {
     }
 }
 const mapStateToProps = state => {
-    return { beatTracker: state.beatTrackerReducer };
+    return {
+        beatTracker: state.beatTrackerReducer,
+        patterns: state.patternReducer
+    };
 };
 const mapDispatchToProps = dispatch => {
     return {};

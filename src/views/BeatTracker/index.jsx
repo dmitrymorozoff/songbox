@@ -13,24 +13,25 @@ import BeatLine from "./components/BeatLine";
 // import cymbal from "../../sounds/cymbal.wav";
 // import tambourine from "../../sounds/Tambourine.wav";
 // import rimshot from "../../sounds/Rimshot.wav";
-import bass from "../../sounds/trap/TM-88 808s [Big Choppa].wav";
-import kick from "../../sounds/trap/Punch Kick.wav";
-import poppin_snare from "../../sounds/trap/Poppin Snare .wav";
-import preach_snare from "../../sounds/trap/TM-88 Snare & Clap 1.wav";
-import perc from "../../sounds/trap//TM-88 Percs [Perc 1].wav";
-import shake from "../../sounds/trap/Subtle Shake.wav";
-import hhopen from "../../sounds/trap/TM-88 Hats [Open Hat 2].wav";
-import hhclosed from "../../sounds/trap/Crack Hat.wav";
-import bongo from "../../sounds/trap/TM-88 Percs [Bongo 2].wav";
-import took from "../../sounds/trap/Took.wav";
-import tommid from "../../sounds/Tom_Mid.wav";
-import crash from "../../sounds/trap/BOOMIN CRASH DELAY.wav";
-import tambourine from "../../sounds/Tambourine.wav";
-import rimshot from "../../sounds/Rimshot.wav";
-import roll from "../../sounds/trap/Carmack Bass Roll.wav";
+import noise from "../../sounds/Wav/Miscellaneous/Digital Noise 05.wav";
+import kick from "../../sounds/Wav/Kick Drums/EDM Kick 01.wav";
+import snare from "../../sounds/Wav/Snare Drums/Synthetic Snare 08.wav";
+import perc from "../../sounds/Wav/Percussion/Synthetic Percussion 18.wav";
+import bleep from "../../sounds/Wav/Miscellaneous/Digital Bleep 06.wav";
+import hh from "../../sounds/Wav/Cymbals/808 Closed HiHat 01.wav";
+import conga from "../../sounds/Wav/Congas/Digital Conga 03.wav";
+import digconga from "../../sounds/Wav/Congas/Digital Conga 11.wav";
+import lowconga from "../../sounds/Wav/Congas/808 Low Conga 14.wav";
+import claves from "../../sounds/Wav/Percussion/Digital Claves 03.wav";
+import tom from "../../sounds/Wav/TomToms/Digital Tom 04.wav";
+import digerror from "../../sounds/Wav/Miscellaneous/Digital Error 18.wav";
+import rimshot from "../../sounds/Wav/Miscellaneous/909 Rimshot 07.wav";
+import cymbal from "../../sounds/Wav/Cymbals/Synthetic Cymbal 25.wav";
 import { BeatTrackerActions } from "./actions";
 import Metronome from "../../components/Metronome";
 import { connect } from "react-redux";
+import Patterns from "../../components/Patterns/";
+import "./style.css";
 
 class BeatTracker extends Component {
     constructor(props) {
@@ -41,21 +42,20 @@ class BeatTracker extends Component {
     }
     renderBeatLine = () => {
         const titleLine = [
-            { title: "Bass", url: bass },
+            { title: "Noise", url: noise },
             { title: "Kick", url: kick },
-            { title: "Pop Snare", url: poppin_snare },
-            { title: "Prea Snare", url: preach_snare },
+            { title: "Snare", url: snare },
             { title: "Perc", url: perc },
-            { title: "Shake", url: shake },
-            { title: "Hhopen", url: hhopen },
-            { title: "Hhclosed", url: hhclosed },
-            { title: "bongo", url: bongo },
-            { title: "took", url: took },
-            { title: "TomMid", url: tommid },
-            { title: "Crash", url: crash },
-            { title: "Tambourine", url: tambourine },
+            { title: "Bleep", url: bleep },
+            { title: "HiHat", url: hh },
+            { title: "Conga", url: conga },
+            { title: "DigConga", url: digconga },
+            { title: "LowConga", url: lowconga },
+            { title: "Claves", url: claves },
+            { title: "Tom", url: tom },
+            { title: "DigError", url: digerror },
             { title: "Rimshot", url: rimshot },
-            { title: "Roll", url: roll }
+            { title: "Cymbal", url: cymbal }
         ];
         return titleLine.map((item, index) => {
             return (
@@ -81,17 +81,18 @@ class BeatTracker extends Component {
     render() {
         return (
             <div className="beat-tracker-wrapper">
-                <button onClick={this.handleStartClick}>Start</button>
-                <input
-                    type="range"
-                    min="60"
-                    max="200"
-                    step="1"
-                    onChange={this.handleChangeBPM}
-                />
-                <div className="bpm">{this.props.beatTracker.bpm}</div>
-                <Metronome />
-                {this.renderBeatLine()}
+                <div className="beat-tracker-control">
+                    <button onClick={this.handleStartClick}>Start</button>
+                    <input
+                        type="range"
+                        min="100"
+                        max="200"
+                        step="1"
+                        onChange={this.handleChangeBPM}
+                    />
+                </div>
+                <div className="beat-line-wrapper">{this.renderBeatLine()}</div>
+                <Patterns />
             </div>
         );
     }

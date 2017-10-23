@@ -23,6 +23,22 @@ export default class Sound {
                 });
             });
     };
+    playSynth = (note, beat, volume = 0.15) => {
+        const oscillator = this.audioContext.createOscillator();
+        const gainNode = this.audioContext.createGain();
+        oscillator.frequency.value = note / 4;
+        oscillator.type = "square";
+        oscillator.connect(gainNode);
+        gainNode.gain.value = volume;
+        gainNode.connect(this.audioContext.destination);
+        oscillator.start(0);
+        gainNode.gain.setTargetAtTime(
+            0,
+            this.audioContext.currentTime,
+            beat - 0.05 || 0.185
+        );
+        oscillator.onended = () => this.audioContext.close();
+    };
     changeVolume = value => {
         this.gainNode.gain.value = value;
     };

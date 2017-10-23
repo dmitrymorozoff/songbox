@@ -2,14 +2,14 @@ import React from "react";
 import Pad from "./components/Pad";
 import "./style.css";
 import { connect } from "react-redux";
-import bass from "../../sounds/Bass_Hit.wav";
-import snare from "../../sounds/snare_drum.wav";
+import kick from "../../sounds/trap/Punch Kick.wav";
+import snare from "../../sounds/trap/TM-88 Snare & Clap 1.wav";
 import closeHiHat from "../../sounds/Hi_Hat_Closed.wav";
 import cymbal from "../../sounds/cymbal.wav";
 import PropTypes from "prop-types";
 import openHiHat from "../../sounds/Hi_Hat_Short.wav";
 import cowbell from "../../sounds/cowbell.wav";
-import clap from "../../sounds/hand_clap.wav";
+import pop_snare from "../../sounds/trap/Poppin Snare .wav";
 import rimshot from "../../sounds/Rimshot.wav";
 import tom from "../../sounds/Tom_Mid.wav";
 import { PadsActions } from "./actions";
@@ -42,7 +42,7 @@ class Pads extends React.Component {
                 this.props.play({ title, key });
                 break;
             case "C":
-                title = "Clap";
+                title = "Pop Snare";
                 this.props.play({ title, key });
                 break;
             case "H":
@@ -69,7 +69,7 @@ class Pads extends React.Component {
         const sounds = [
             {
                 title: "Kick",
-                url: bass,
+                url: kick,
                 key: "K"
             },
             {
@@ -88,8 +88,8 @@ class Pads extends React.Component {
                 key: "O"
             },
             {
-                title: "Clap",
-                url: clap,
+                title: "Pop Snare",
+                url: pop_snare,
                 key: "C"
             },
             {

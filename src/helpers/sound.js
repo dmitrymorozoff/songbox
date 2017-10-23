@@ -2,7 +2,7 @@ export default class Sound {
     constructor(url, audioContext) {
         this.url = url;
         this.audioContext = audioContext;
-        this.gainNode  = this.audioContext.createGain();
+        this.gainNode = this.audioContext.createGain();
         this.isReadyToPlay = false;
         this.source = null;
     }
@@ -15,16 +15,18 @@ export default class Sound {
             })
             .then(buffer => {
                 this.audioContext.decodeAudioData(buffer, decodedData => {
-                    this.source.buffer = decodedData;
+                    if (!this.source.buffer) {
+                        this.source.buffer = decodedData;
+                    }
                     this.source.connect(this.gainNode);
                     this.gainNode.connect(this.audioContext.destination);
                 });
             });
-    }
-    changeVolume = (value) => {
+    };
+    changeVolume = value => {
         this.gainNode.gain.value = value;
-    }
+    };
     play = () => {
         this.source.start(0);
-    }
+    };
 }

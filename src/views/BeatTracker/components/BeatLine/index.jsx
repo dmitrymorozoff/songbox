@@ -47,27 +47,28 @@ class BeatLine extends Component {
         let current = 0;
         let ticker = null;
         let bpm = this.props.beatTracker.bpm;
-        let interval = 60 / bpm * 1000 / 4;
+        let interval = 60 * 1000 / bpm / 2.5;
+        const tracker = () => {
+            if (current === countIteration) {
+                current = 0;
+            }
+            this.setState({
+                currentTrackingBeat: current
+            });
+            if (this.state.activeBeats[current]) {
+                this.sound.loadSoundFile();
+                this.sound.play();
+            }
+            console.log(interval);
+            current++;
+        };
+
         if (status) {
-            const start = () => {
-                ticker = setInterval(() => {
-                    if (current === countIteration) {
-                        current = 0;
-                    }
-                    this.setState({
-                        currentTrackingBeat: current
-                    });
-                    if (this.state.activeBeats[current]) {
-                        this.sound.loadSoundFile();
-                        this.sound.play();
-                    }
-                    current++;
-                }, interval);
-                this.setState({
-                    tickerId: ticker
-                });
-            };
-            start();
+            tracker();
+            ticker = setInterval(tracker, interval);
+            this.setState({
+                tickerId: ticker
+            });
         } else {
             clearInterval(this.state.tickerId);
             this.setState({

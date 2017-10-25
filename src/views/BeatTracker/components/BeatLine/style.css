@@ -3,25 +3,25 @@
 }
 
 .beatline-title {
-    width: 80px;
-    font-size: 12px;
+    width: 5rem;
+    font-size: 0.75rem;
     color: #e5e5e9;
     background: rgb(35, 40, 65);
-    margin-right: 20px;
-    border-radius: 3px;
-    margin-bottom: 4px;
+    margin-right: 1.25rem;
+    border-radius: 0.1875rem;
+    margin-bottom: 0.25rem;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .beatline-beat {
-    width: 30px;
-    height: 30px;
-    border-radius: 3px;
+    width: 1.875rem;
+    height: 1.875rem;
+    border-radius: 0.1875rem;
     cursor: pointer;
     background: rgb(35, 40, 65);
-    margin: 2px;
+    margin: 0.125rem;
     z-index: 999;
 }
 
@@ -31,7 +31,7 @@
 
 .beatline-beat.active {
     background: #6239ed;
-    box-shadow: 0 1px 20px rgba(113, 59, 240, 0.4);
+    box-shadow: 0 0.0625rem 1.25rem rgba(113, 59, 240, 0.4);
     animation: pulse 1s ease-in-out;
 }
 
@@ -41,7 +41,7 @@
 
 .beatline {
     display: flex;
-    margin-right: 20px;
+    margin-right: 1.25rem;
 }
 
 @keyframes pulse {

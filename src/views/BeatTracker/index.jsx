@@ -1,5 +1,9 @@
 import React, { Component } from "react";
 import BeatLine from "./components/BeatLine";
+import {
+    ReactRadioButtonsGroup,
+    ReactRadioButton
+} from "react-radio-buttons-group";
 // import bass from "../../sounds/basses.wav";
 // import kick from "../../sounds/Bass_Hit.wav";
 // import clap from "../../sounds/hand_clap.wav";
@@ -31,13 +35,17 @@ import { BeatTrackerActions } from "./actions";
 import Metronome from "../../components/Metronome";
 import { connect } from "react-redux";
 import Patterns from "../../components/Patterns/";
+import Slider from "rc-slider";
+import "rc-slider/assets/index.css";
 import "./style.css";
 
 class BeatTracker extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            trackingStatus: false
+            trackingStatus: false,
+            bpm: 130,
+            countCubes: 16
         };
     }
     renderBeatLine = () => {
@@ -63,7 +71,7 @@ class BeatTracker extends Component {
                     title={item.title}
                     key={index.toString()}
                     url={item.url}
-                    countCubes={16}
+                    countCubes={this.state.countCubes}
                 />
             );
         });
@@ -75,24 +83,61 @@ class BeatTracker extends Component {
         });
         this.props.toggleTracking(!status);
     };
-    handleChangeBPM = event => {
-        this.props.changeBPM(event.target.value);
+    handleChangeBPM = bpm => {
+        this.setState({
+            bpm: bpm
+        });
+        this.props.changeBPM(bpm);
+    };
+    handleChangeBeatType = value => {
+        switch (value) {
+            case "4/4":
+                this.setState({
+                    countCubes: 16
+                });
+                break;
+            case "8/8":
+                this.setState({
+                    countCubes: 32
+                });
+                break;
+            default:
+                this.setState({
+                    countCubes: 16
+                });
+                break;
+        }
     };
     render() {
+        let { bpm } = this.state;
         return (
             <div className="beat-tracker-wrapper">
-                <div className="beat-tracker-control">
-                    <button onClick={this.handleStartClick}>Start</button>
-                    <input
-                        type="range"
-                        min="100"
-                        max="200"
-                        step="1"
+                <div className="beat-tracker-controls">
+                    <ReactRadioButtonsGroup
+                        group="beat-type"
+                        onChange={this.handleChangeBeatType}
+                    >
+                        <ReactRadioButton value="4/4">4/4</ReactRadioButton>
+                        <ReactRadioButton value="8/8">8/8</ReactRadioButton>
+                    </ReactRadioButtonsGroup>
+                    <div className="beat-tracker-control">
+                        <button onClick={this.handleStartClick}>Start</button>
+                    </div>
+                    <Slider
+                        value={this.state.bpm}
+                        vertical={false}
+                        min={130}
+                        max={200}
+                        step={1}
                         onChange={this.handleChangeBPM}
                     />
                 </div>
-                <div className="beat-line-wrapper">{this.renderBeatLine()}</div>
-                <Patterns />
+                <div className="sequencer">
+                    <div className="beat-line-wrapper">
+                        {this.renderBeatLine()}
+                    </div>
+                    <Patterns />
+                </div>
             </div>
         );
     }

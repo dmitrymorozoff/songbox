@@ -5,6 +5,7 @@ export default class Sound {
         this.gainNode = this.audioContext.createGain();
         this.isReadyToPlay = false;
         this.source = null;
+        this.oscillatorType = "square";
     }
     loadSoundFile = () => {
         this.source = this.audioContext.createBufferSource();
@@ -27,7 +28,7 @@ export default class Sound {
         const oscillator = this.audioContext.createOscillator();
         const gainNode = this.audioContext.createGain();
         oscillator.frequency.value = note / 4;
-        oscillator.type = "square";
+        oscillator.type = this.oscillatorType;
         oscillator.connect(gainNode);
         gainNode.gain.value = volume;
         gainNode.connect(this.audioContext.destination);
@@ -39,6 +40,9 @@ export default class Sound {
         );
         oscillator.onended = () => this.audioContext.close();
     };
+    changeOscillatorType = value => {
+        this.oscillatorType = value;
+    }
     changeVolume = value => {
         this.gainNode.gain.value = value;
     };

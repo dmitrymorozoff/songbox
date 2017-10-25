@@ -2,11 +2,15 @@ import React from "react";
 import { connect } from "react-redux";
 import Sound from "../../helpers/sound";
 import "./style.css";
+import Slider from "react-rangeslider";
 import { audioContext } from "../App";
 
 class Synth extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            detune: 0
+        };
         this.sound = new Sound("", audioContext, false, event => {});
     }
     handleKeyClick = event => {
@@ -98,8 +102,95 @@ class Synth extends React.Component {
         }
         return keys;
     };
+    handleOscillatorBtnClick = event => {};
+    handleChangeDetune = detune => {
+        this.setState({
+            detune: detune
+        });
+    };
     render() {
-        return <div className="synth-wrapper">{this.renderKeys()}</div>;
+        let { detune } = this.state;
+        return (
+            <div className="synth">
+                <Slider
+                    value={this.state.detune}
+                    orientation="vertical"
+                    min={0}
+                    max={60}
+                    step={1}
+                    tooltip={false}
+                    onChange={this.handleChangeDetune}
+                />
+                <div className="oscillator-type oscillator-type--1">
+                    <div className="oscillator-type-title">Osc 1</div>
+                    <div className="oscillator-type-btn-wrapper">
+                        <div
+                            className="oscillator-type-btn"
+                            data-osc="1"
+                            data-type="sine"
+                            onClick={this.handleOscillatorBtnClick}
+                        >
+                            Sine
+                        </div>
+                        <div
+                            className="oscillator-type-btn"
+                            data-osc="1"
+                            data-type="square"
+                        >
+                            Square
+                        </div>
+                        <div
+                            className="oscillator-type-btn"
+                            data-osc="1"
+                            data-type="saw"
+                        >
+                            Saw
+                        </div>
+                        <div
+                            className="oscillator-type-btn"
+                            data-osc="1"
+                            data-type="triangle"
+                        >
+                            Triangle
+                        </div>
+                    </div>
+                </div>
+                <div className="oscillator-type oscillator-type--2">
+                    <div className="oscillator-type-title">Osc 2</div>
+                    <div className="oscillator-type-btn-wrapper">
+                        <div
+                            className="oscillator-type-btn"
+                            data-osc="2"
+                            data-type="sine"
+                        >
+                            Sine
+                        </div>
+                        <div
+                            className="oscillator-type-btn"
+                            data-osc="2"
+                            data-type="square"
+                        >
+                            Square
+                        </div>
+                        <div
+                            className="oscillator-type-btn"
+                            data-osc="2"
+                            data-type="saw"
+                        >
+                            Saw
+                        </div>
+                        <div
+                            className="oscillator-type-btn"
+                            data-osc="2"
+                            data-type="triangle"
+                        >
+                            Triangle
+                        </div>
+                    </div>
+                </div>
+                <div className="synth-wrapper">{this.renderKeys()}</div>
+            </div>
+        );
     }
 }
 const mapStateToProps = state => {

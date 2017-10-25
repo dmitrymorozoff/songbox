@@ -1,0 +1,17 @@
+.circular-slider {
+    display: block;
+    width: 5rem;
+    height: 5rem;
+    transform: rotate(-90deg);
+    cursor: e-resize;
+}
+
+.circular-slider-circle,
+.circular-slider-bar {
+    fill: transparent;
+}
+
+.circular-slider-bar {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 0;
+}

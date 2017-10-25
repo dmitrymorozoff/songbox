@@ -111,6 +111,41 @@ class Pads extends React.Component {
                 title: "Cymbal",
                 url: cymbal,
                 key: "F"
+            },
+            {
+                title: "Cymbal",
+                url: cymbal,
+                key: "F"
+            },
+            {
+                title: "Cymbal",
+                url: cymbal,
+                key: "F"
+            },
+            {
+                title: "Cymbal",
+                url: cymbal,
+                key: "F"
+            },
+            {
+                title: "Cymbal",
+                url: cymbal,
+                key: "F"
+            },
+            {
+                title: "Cymbal",
+                url: cymbal,
+                key: "F"
+            },
+            {
+                title: "Cymbal",
+                url: cymbal,
+                key: "F"
+            },
+            {
+                title: "Cymbal",
+                url: cymbal,
+                key: "F"
             }
         ];
         return sounds.map((item, index) => {

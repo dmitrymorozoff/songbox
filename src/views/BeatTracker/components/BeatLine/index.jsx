@@ -4,13 +4,15 @@ import { connect } from "react-redux";
 import Sound from "../../../../helpers/sound";
 import "./style.css";
 import { audioContext } from "../../../App";
+import { BeatTrackerActions } from "../../actions";
 import patternOne from "./patterns/";
 
 class BeatLine extends Component {
     static propTypes = {
         title: PropTypes.string.isRequired,
         countCubes: PropTypes.number.isRequired,
-        url: PropTypes.string.isRequired
+        url: PropTypes.string.isRequired,
+        addActiveBeat: PropTypes.func
     };
     constructor(props) {
         super(props);
@@ -34,6 +36,10 @@ class BeatLine extends Component {
         this.setState({
             activeBeats: [...this.state.activeBeats, ...initialArray]
         });
+        this.props.addActiveBeat({
+            type: this.props.title,
+            beats: [...this.state.activeBeats, ...initialArray]
+        });
     }
     handleClickBeat = event => {
         let dataId = event.target.getAttribute("data-id");
@@ -41,6 +47,10 @@ class BeatLine extends Component {
         activeBeats[dataId] = !activeBeats[dataId];
         this.setState({
             activeBeats: [...activeBeats]
+        });
+        this.props.addActiveBeat({
+            type: this.props.title,
+            beats: [...activeBeats]
         });
     };
     tracking = status => {
@@ -126,8 +136,11 @@ class BeatLine extends Component {
                 this.setState({
                     activeBeats: [...preset]
                 });
+                this.props.addActiveBeat({
+                    type: this.props.title,
+                    beats: [...preset]
+                });
             } else {
-                console.log(nextProps.patterns.activePattern.id);
                 switch (parseInt(nextProps.patterns.activePattern.id, 10)) {
                     case 1:
                         switch (this.props.title) {
@@ -136,11 +149,19 @@ class BeatLine extends Component {
                                 this.setState({
                                     activeBeats: [...preset]
                                 });
+                                this.props.addActiveBeat({
+                                    type: this.props.title,
+                                    beats: [...preset]
+                                });
                                 break;
                             case "Snare":
                                 preset = [...patternOne["Snare"]];
                                 this.setState({
                                     activeBeats: [...preset]
+                                });
+                                this.props.addActiveBeat({
+                                    type: this.props.title,
+                                    beats: [...preset]
                                 });
                                 break;
                             case "Perc":
@@ -148,11 +169,19 @@ class BeatLine extends Component {
                                 this.setState({
                                     activeBeats: [...preset]
                                 });
+                                this.props.addActiveBeat({
+                                    type: this.props.title,
+                                    beats: [...preset]
+                                });
                                 break;
                             case "Bleep":
                                 preset = [...patternOne["Bleep"]];
                                 this.setState({
                                     activeBeats: [...preset]
+                                });
+                                this.props.addActiveBeat({
+                                    type: this.props.title,
+                                    beats: [...preset]
                                 });
                                 break;
                             case "HiHat":
@@ -160,11 +189,19 @@ class BeatLine extends Component {
                                 this.setState({
                                     activeBeats: [...preset]
                                 });
+                                this.props.addActiveBeat({
+                                    type: this.props.title,
+                                    beats: [...preset]
+                                });
                                 break;
                             case "Conga":
                                 preset = [...patternOne["Conga"]];
                                 this.setState({
                                     activeBeats: [...preset]
+                                });
+                                this.props.addActiveBeat({
+                                    type: this.props.title,
+                                    beats: [...preset]
                                 });
                                 break;
                             case "DigConga":
@@ -172,11 +209,19 @@ class BeatLine extends Component {
                                 this.setState({
                                     activeBeats: [...preset]
                                 });
+                                this.props.addActiveBeat({
+                                    type: this.props.title,
+                                    beats: [...preset]
+                                });
                                 break;
                             case "LowConga":
                                 preset = [...patternOne["LowConga"]];
                                 this.setState({
                                     activeBeats: [...preset]
+                                });
+                                this.props.addActiveBeat({
+                                    type: this.props.title,
+                                    beats: [...preset]
                                 });
                                 break;
                             case "Tom":
@@ -184,17 +229,29 @@ class BeatLine extends Component {
                                 this.setState({
                                     activeBeats: [...preset]
                                 });
+                                this.props.addActiveBeat({
+                                    type: this.props.title,
+                                    beats: [...preset]
+                                });
                                 break;
                             case "Rimshot":
                                 preset = [...patternOne["Rimshot"]];
                                 this.setState({
                                     activeBeats: [...preset]
                                 });
+                                this.props.addActiveBeat({
+                                    type: this.props.title,
+                                    beats: [...preset]
+                                });
                                 break;
                             case "Cymbal":
                                 preset = [...patternOne["Cymbal"]];
                                 this.setState({
                                     activeBeats: [...preset]
+                                });
+                                this.props.addActiveBeat({
+                                    type: this.props.title,
+                                    beats: [...preset]
                                 });
                                 break;
                             default:
@@ -225,6 +282,10 @@ const mapStateToProps = state => {
     };
 };
 const mapDispatchToProps = dispatch => {
-    return {};
+    return {
+        addActiveBeat: beatsArray => {
+            dispatch(BeatTrackerActions.addActiveBeat(beatsArray));
+        }
+    };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(BeatLine);

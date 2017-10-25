@@ -4,57 +4,76 @@
 }
 
 .synth-white-key {
-    width: 30px;
-    height: 160px;
-    border: 1px solid gray;
+    width: 1.875rem;
+    height: 10rem;
+    background: rgb(35, 40, 65);
+    border: 0.125rem solid rgb(26, 27, 49);
     cursor: pointer;
 }
 
 .synth-black-key {
-    width: 20px;
+    width: 1.25rem;
     position: absolute;
-    height: 80px;
-    background: black;
-    border: 1px solid gray;
-    cursor: pointer;    
+    height: 5rem;
+    background: rgb(26, 27, 49);
+    cursor: pointer;
 }
 
 .synth-black-key--1 {
-    left: 20px;
+    left: 1.25rem;
 }
 
 .synth-black-key--2 {
-    left: 53px;
+    left: 3.3125rem;
 }
 
 .synth-black-key--3 {
-    left: 120px;
+    left: 7.5rem;
 }
 
 .synth-black-key--4 {
-    left: 150px;
+    left: 9.375rem;
 }
 
 .synth-black-key--5 {
-    left: 180px;
+    left: 11.25rem;
 }
 
 .synth-black-key--6 {
-    left: 245px;
+    left: 15.3125rem;
 }
 
 .synth-black-key--7 {
-    left: 278px;
+    left: 17.375rem;
 }
 
 .synth-black-key--8 {
-    left: 310px;
+    left: 19.375rem;
 }
 
 .synth-black-key--9 {
-    left: 375px;
+    left: 23.4375rem;
 }
 
 .synth-black-key--10 {
-    left: 405px;
+    left: 25.3125rem;
+}
+
+.oscillator-type {
+    display: flex;
+}
+
+.oscillator-type-btn-wrapper {
+    display: flex;
+}
+
+.oscillator-type-btn {
+    font-size: 0.75rem;
+    color: #e5e5e9;
+    background: rgb(35, 40, 65);
+    padding: 0.625rem 1.5625rem;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 0.1875rem;
+    margin: 0.125rem;
 }

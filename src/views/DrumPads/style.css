@@ -1,3 +1,28 @@
 .pads-volume-range {
     outline: none;
 }
+
+.drumpads-wrapper {
+    display: flex;
+    padding: 0.625rem;
+}
+
+.rangeslider-vertical {
+    margin: 0;
+}
+
+.rangeslider-vertical .rangeslider__fill {
+    background-color: #31d7da;
+    height: 140px;
+}
+
+.rangeslider-vertical {
+    max-width: 0.275rem;
+}
+
+.rangeslider-vertical .rangeslider__handle {
+    width: 1rem;
+    height: 1rem;
+    left: -7px;
+    border-radius: 50%;
+}

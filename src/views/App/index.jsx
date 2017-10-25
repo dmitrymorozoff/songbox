@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import "./style.css";
 export const audioContext = new (window.AudioContext ||
     window.webkitAudioContext)();
+
 export default class App extends React.Component {
     render() {
         return (

@@ -17,7 +17,8 @@ class Pad extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            volume: 1
+            volume: 1,
+            isActive: false
         };
         this.sound = new Sound(
             this.props.url,
@@ -26,19 +27,18 @@ class Pad extends Component {
             event => {}
         );
     }
-    play = event => {
-        this.props.play({ title: this.props.title, url: this.props.title.url });
+    handlePlay = event => {
+        this.props.play({ title: this.props.title, url: this.props.url });
     };
     componentWillReceiveProps(nextProps) {
+        console.log(nextProps);
         if (nextProps.padsState.volume !== this.props.padsState.volume) {
             this.setState({
                 volume: this.props.padsState.volume
             });
         }
-    }
-    checkPlay = () => {
-        if (this.props.padsState.playingPad) {
-            if (this.props.padsState.playingPad.title === this.props.title) {
+        if(nextProps.padsState.playingPad) {
+            if (nextProps.padsState.playingPad.title === this.props.title) {
                 this.sound = new Sound(
                     this.props.url,
                     audioContext,
@@ -48,14 +48,30 @@ class Pad extends Component {
                 this.sound.loadSoundFile();
                 this.sound.changeVolume(this.state.volume);
                 this.sound.play();
-                // this.props.play({ title: "", url: "" });
             }
         }
+
+    }
+    handleMouseDown = () => {
+        this.setState({
+            isActive: true
+        });
+    };
+    handleMouseUp = () => {
+        this.setState({
+            isActive: false
+        });
     };
     render() {
-        this.checkPlay();
         return (
-            <div className="pad-wrapper" onClick={this.play}>
+            <div
+                className={
+                    this.state.isActive ? "pad-wrapper active" : "pad-wrapper"
+                }
+                onClick={this.handlePlay}
+                onMouseDown={this.handleMouseDown}
+                onMouseUp={this.handleMouseUp}
+            >
                 {`${this.props.title} (${this.props.keyTitle})`}
             </div>
         );

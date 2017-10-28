@@ -123,20 +123,48 @@ class BeatTracker extends Component {
                     <div className="beat-tracker-control">
                         <button onClick={this.handleStartClick}>Start</button>
                     </div>
-                    <Slider
-                        value={this.state.bpm}
-                        vertical={false}
-                        min={130}
-                        max={200}
-                        step={1}
-                        onChange={this.handleChangeBPM}
-                    />
                 </div>
                 <div className="sequencer">
                     <div className="beat-line-wrapper">
                         {this.renderBeatLine()}
                     </div>
-                    <Patterns />
+                    <div className="sequencer-settings">
+                        <Patterns />
+                        <div className="sequencer-equalizer">
+                            <Slider
+                                value={this.state.bpm}
+                                vertical={true}
+                                min={130}
+                                max={200}
+                                step={1}
+                                onChange={this.handleChangeBPM}
+                            />
+                            <Slider
+                                value={this.state.bpm}
+                                vertical={true}
+                                min={130}
+                                max={200}
+                                step={1}
+                                onChange={this.handleChangeBPM}
+                            />
+                            <Slider
+                                value={this.state.bpm}
+                                vertical={true}
+                                min={130}
+                                max={200}
+                                step={1}
+                                onChange={this.handleChangeBPM}
+                            />
+                            <Slider
+                                value={this.state.bpm}
+                                vertical={true}
+                                min={130}
+                                max={200}
+                                step={1}
+                                onChange={this.handleChangeBPM}
+                            />
+                        </div>
+                    </div>
                 </div>
             </div>
         );

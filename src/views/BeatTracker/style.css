@@ -23,7 +23,7 @@
 }
 
 .rc-slider-rail {
-    background: rgb(37, 42, 68);
+    background: #252934;
 }
 
 .rc-slider-handle {
@@ -37,7 +37,7 @@
 .beat-tracker-controls {
     display: flex;
     align-items: center;
-    padding-top: 0.9375rem;
+    justify-content: flex-start;
     padding-bottom: 0.9375rem;
 }
 
@@ -46,7 +46,7 @@
 }
 
 .react-radio-buttons-group__item:first-child .react-radio-button__control {
-    background: rgb(37, 42, 68);
+    background: #252934;
     border: none;
     font-size: 0.75rem;
     color: #e5e5e9;
@@ -64,7 +64,7 @@
 }
 
 .react-radio-button__control {
-    background: rgb(37, 42, 68);
+    background: #252934;
     border: none;
     font-size: 0.75rem;
     color: #e5e5e9;
@@ -72,4 +72,16 @@
 
 .react-radio-buttons-group {
     margin-right: 0.625rem;
+}
+
+.sequencer-settings {
+    display: flex;
+    flex-direction: column;
+}
+
+.sequencer-equalizer {
+    height: 12.5rem;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
 }

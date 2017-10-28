@@ -1,23 +1,24 @@
 .app {
     display: flex;
     flex-direction: column;
-    padding: 15px;
-    width: 900px;
-    min-height: 550px;
-    border-radius: 3px;
+    padding: 2rem;
+    width: 62.5rem;
+    border-radius: 0.1875rem;
+    background: #1c1f28;
 }
 
 .navbar {
     display: flex;
+    justify-content: center;
 }
 
 .navbar-link {
     font-size: 12px;
     color: #e5e5e9;
-    background: rgb(35, 40, 65);
+    background: #252934;
     text-decoration: none;
     padding: 10px 25px;
-    margin: 2px;
+    margin: 2px 5px;
     cursor: pointer;
     transition: 0.3s;
     border-radius: 3px;
@@ -37,4 +38,8 @@ button {
     color: #fff;
     margin: 2px;
     background-image: linear-gradient(to right, #3260fc, #2d59e9);
+}
+
+.app-content {
+    padding-top: 25px;
 }

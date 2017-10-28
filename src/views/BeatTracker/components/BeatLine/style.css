@@ -6,7 +6,7 @@
     width: 5rem;
     font-size: 0.75rem;
     color: #e5e5e9;
-    background: rgb(35, 40, 65);
+    background: #252934;
     margin-right: 1.25rem;
     border-radius: 0.1875rem;
     margin-bottom: 0.25rem;
@@ -20,8 +20,9 @@
     height: 1.875rem;
     border-radius: 0.1875rem;
     cursor: pointer;
-    background: rgb(35, 40, 65);
-    margin: 0.125rem;
+    background: #252934;
+    margin-bottom: 0.25rem;
+    margin-right: 0.25rem;
     z-index: 999;
 }
 

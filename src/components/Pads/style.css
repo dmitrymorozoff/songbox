@@ -1,8 +1,10 @@
 .pads-wrapper {
     display: flex;
     flex-wrap: wrap;
-    width: 26rem;
-    height: 20rem;
-    margin: 0;
-    margin-left: 1.5625rem;
+    width: 29.7rem;
+    height: 29.9rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    justify-content: space-between;
+    align-items: space-between;
 }

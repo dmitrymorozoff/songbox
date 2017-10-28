@@ -6,9 +6,8 @@
 body {
     font-size: 16px;
     font-family: "Open Sans", sans-serif;
-    background-color: rgb(26, 27, 49);
+    background-color: #1c1f28;
     display: flex;
     justify-content: center;
-    align-items: center;
     height: 100vh;
 }

@@ -1,66 +1,68 @@
 .synth-wrapper {
     display: flex;
     position: relative;
+    margin-top: 20px;
 }
 
 .synth-white-key {
-    width: 1.875rem;
+    width: 2.875rem;
     height: 10rem;
-    background: rgb(35, 40, 65);
-    border: 0.125rem solid rgb(26, 27, 49);
+    background: #252934;
+    border: 0.125rem solid #1c1f28;
     cursor: pointer;
 }
 
 .synth-black-key {
-    width: 1.25rem;
+    width: 2.25rem;
     position: absolute;
     height: 5rem;
-    background: rgb(26, 27, 49);
+    background: #1c1f28;
     cursor: pointer;
 }
 
 .synth-black-key--1 {
-    left: 1.25rem;
+    left: 2rem;
 }
 
 .synth-black-key--2 {
-    left: 3.3125rem;
+    left: 5.1rem;
 }
 
 .synth-black-key--3 {
-    left: 7.5rem;
+    left: 11.4rem;
 }
 
 .synth-black-key--4 {
-    left: 9.375rem;
+    left: 14.5rem;
 }
 
 .synth-black-key--5 {
-    left: 11.25rem;
+    left: 17.6rem;
 }
 
 .synth-black-key--6 {
-    left: 15.3125rem;
+    left: 23.8125rem;
 }
 
 .synth-black-key--7 {
-    left: 17.375rem;
+    left: 27rem;
 }
 
 .synth-black-key--8 {
-    left: 19.375rem;
+    left: 33.3rem;
 }
 
 .synth-black-key--9 {
-    left: 23.4375rem;
+    left: 36.4rem;
 }
 
 .synth-black-key--10 {
-    left: 25.3125rem;
+    left: 39.6rem;
 }
 
 .oscillator-type {
     display: flex;
+    align-items: center;
 }
 
 .oscillator-type-btn-wrapper {
@@ -70,10 +72,16 @@
 .oscillator-type-btn {
     font-size: 0.75rem;
     color: #e5e5e9;
-    background: rgb(35, 40, 65);
+    background: #252934;
     padding: 0.625rem 1.5625rem;
     cursor: pointer;
     transition: 0.3s;
     border-radius: 0.1875rem;
     margin: 0.125rem;
+}
+
+.oscillator-type-title {
+    color: #e5e5e9;
+    font-size: 0.75rem;
+    margin-right: 1.5625rem;
 }

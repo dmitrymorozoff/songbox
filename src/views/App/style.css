@@ -1,43 +1,49 @@
 .app {
     display: flex;
     flex-direction: column;
-    padding: 2rem;
-    width: 62.5rem;
+    width: 100%;
     border-radius: 0.1875rem;
-    background: #1c1f28;
+    background: #2a2d30;
 }
 
 .navbar {
     display: flex;
     justify-content: center;
+    background-color: #313438;
+    border-bottom: 1px solid #23272a;
 }
 
 .navbar-link {
-    font-size: 12px;
+    font-size: 0.75rem;
     color: #e5e5e9;
-    background: #252934;
+    text-transform: uppercase;
+    letter-spacing: 0.0625rem;
+    font-weight: 500;
     text-decoration: none;
-    padding: 10px 25px;
-    margin: 2px 5px;
+    padding: 0.625rem 1.5625rem;
+    margin: 0.125rem 0.3125rem;
     cursor: pointer;
     transition: 0.3s;
-    border-radius: 3px;
+    border-radius: 0.125rem;
 }
 
 .navbar-link:hover {
-    background: #3260fc;
+    background: #696c6e;
 }
 
 button {
-    font-size: 12px;
-    padding: 10px 25px;
-    border-radius: 3px;
+    font-size: 0.75rem;
+    padding: 0.625rem 1.5625rem;
+    border-radius: 0.1875rem;
+    font-weight: 500;
     border: none;
     outline: none;
+    text-transform: uppercase;
     cursor: pointer;
     color: #fff;
-    margin: 2px;
-    background-image: linear-gradient(to right, #3260fc, #2d59e9);
+    margin: 0.125rem;
+    letter-spacing: 0.0625rem;
+    background: #313438;
 }
 
 .app-content {

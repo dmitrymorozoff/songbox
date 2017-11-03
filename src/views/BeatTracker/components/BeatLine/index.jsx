@@ -58,7 +58,7 @@ class BeatLine extends Component {
         let current = 0;
         let ticker = null;
         let bpm = this.props.beatTracker.bpm;
-        let interval = 60 * 1000 / bpm / 2.5;
+        let interval = 60 * 1000 / bpm / 3;
         const tracker = () => {
             if (current === countIteration) {
                 current = 0;
@@ -70,7 +70,6 @@ class BeatLine extends Component {
                 this.sound.loadSoundFile();
                 this.sound.play();
             }
-            console.log(interval);
             current++;
         };
 
@@ -93,18 +92,20 @@ class BeatLine extends Component {
         let activeClass = "";
         let preset = null;
         let flag = false;
+        let divideClass = "";
         for (let i = 0; i < this.props.countCubes; i++) {
             if (this.state.currentTrackingBeat === i) {
                 trackingClass = "tracking";
             }
-
             if (this.state.activeBeats[i]) {
                 activeClass = "active";
             }
-
+            if (i === 0 || i % 4 === 0) {
+                divideClass = "divide";
+            }
             beatline.push(
                 <div
-                    className={`beatline-beat ${trackingClass} ${activeClass}`}
+                    className={`beatline-beat ${trackingClass} ${activeClass} ${divideClass} ${this.props.title.toLowerCase()}`}
                     data-id={i}
                     key={i.toString()}
                     onClick={this.handleClickBeat}
@@ -112,6 +113,7 @@ class BeatLine extends Component {
             );
             trackingClass = "";
             activeClass = "";
+            divideClass = "";
         }
         return beatline;
     };

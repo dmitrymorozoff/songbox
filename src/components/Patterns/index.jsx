@@ -46,6 +46,12 @@ class Patterns extends React.Component {
                 <div className="pattern-item" data-id="6">
                     6
                 </div>
+                <div className="pattern-item" data-id="7">
+                    7
+                </div>
+                <div className="pattern-item" data-id="8">
+                    8
+                </div>
             </div>
         );
     }

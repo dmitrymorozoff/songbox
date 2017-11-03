@@ -4,7 +4,6 @@ import { connect } from "react-redux";
 import { PadsActions } from "../../components/Pads/actions";
 import "rc-slider/assets/index.css";
 import "./style.css";
-import Patterns from "../../components/Patterns";
 import Slider from "rc-slider";
 
 class DrumPads extends React.Component {
@@ -25,43 +24,18 @@ class DrumPads extends React.Component {
         let { volume } = this.state;
         return (
             <div className="drumpads">
-                <div className="drumpads-wrapper">
-                    <Patterns />
-                    <Pads />
-                    <div className="equalizer">
+                                    <div className="equalizer">
                         <Slider
                             value={this.state.volume}
-                            vertical={true}
-                            min={0}
-                            max={1}
-                            step={0.1}
-                            onChange={this.onChangeVolume}
-                        />{" "}
-                        <Slider
-                            value={this.state.volume}
-                            vertical={true}
-                            min={0}
-                            max={1}
-                            step={0.1}
-                            onChange={this.onChangeVolume}
-                        />{" "}
-                        <Slider
-                            value={this.state.volume}
-                            vertical={true}
-                            min={0}
-                            max={1}
-                            step={0.1}
-                            onChange={this.onChangeVolume}
-                        />{" "}
-                        <Slider
-                            value={this.state.volume}
-                            vertical={true}
+                            vertical={false}
                             min={0}
                             max={1}
                             step={0.1}
                             onChange={this.onChangeVolume}
                         />
                     </div>
+                <div className="drumpads-wrapper">
+                    <Pads />
                 </div>
             </div>
         );

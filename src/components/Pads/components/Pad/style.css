@@ -1,17 +1,18 @@
 .pad-wrapper {
-    width: 7.25rem;
-    height: 7.25rem;
+    width: 8.75rem;
+    height: 8.75rem;
     color: #e5e5e9;
     cursor: pointer;
     user-select: none;
     text-transform: uppercase;
-    background: #252934;
+    background: #3f4244;
     display: flex;
     font-weight: bold;
     justify-content: center;
     align-items: center;
     font-size: 0.6875rem;
-    border-radius: 0.1875rem;
+    border-radius: 0.125rem;
+    margin: 0.125rem;
 }
 
 .pad-wrapper.active {
@@ -28,4 +29,36 @@
     100% {
         background: #6239ed;
     }
+}
+
+.pad-wrapper.active.kick {
+    background: #7c78b7;
+}
+
+.pad-wrapper.active.snare {
+    background: #16a085;
+}
+
+.pad-wrapper.active.rimshot {
+    background: #f1c40f;
+}
+
+.pad-wrapper.active.hhopen {
+    background: #40cfe4;
+}
+
+.pad-wrapper.active.hhclosed {
+    background: #f43f3f;
+}
+
+.pad-wrapper.active.cowbell {
+    background: #7c78b7;
+}
+
+.pad-wrapper.active.tom {
+    background: #966e53;
+}
+
+.pad-wrapper.active.cymbal {
+    background: #66bbde;
 }

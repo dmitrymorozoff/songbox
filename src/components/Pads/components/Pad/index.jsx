@@ -66,7 +66,7 @@ class Pad extends Component {
         return (
             <div
                 className={
-                    this.state.isActive ? "pad-wrapper active" : "pad-wrapper"
+                    this.state.isActive ? `pad-wrapper ${this.props.title.toLowerCase()} active` : `pad-wrapper ${this.props.title.toLowerCase()}`
                 }
                 onClick={this.handlePlay}
                 onMouseDown={this.handleMouseDown}

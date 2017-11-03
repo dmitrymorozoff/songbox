@@ -21,7 +21,7 @@ class Metronome extends React.Component {
     start = () => {
         let ticker = 0;
         let bpm = this.props.beatTracker.bpm;
-        let interval = 60 * 1000 / bpm / 2.5;
+        let interval = 60 * 1000 / bpm / 3;
         const metronome = () => {
             this.sound.loadSoundFile();
             this.sound.play();

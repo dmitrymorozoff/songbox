@@ -4,6 +4,8 @@
 
 .drumpads {
     display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .drumpads-wrapper {
@@ -19,8 +21,7 @@
 }
 
 .equalizer {
-    width: 13rem;
-    height: 16rem;
+    width: 10rem;
     display: flex;
     justify-content: space-between;
 }

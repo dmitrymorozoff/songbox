@@ -44,8 +44,8 @@ class BeatTracker extends Component {
         super(props);
         this.state = {
             trackingStatus: false,
-            bpm: 130,
-            countCubes: 16
+            bpm: 146,
+            countCubes: 32
         };
     }
     renderBeatLine = () => {
@@ -91,11 +91,6 @@ class BeatTracker extends Component {
     };
     handleChangeBeatType = value => {
         switch (value) {
-            case "4/4":
-                this.setState({
-                    countCubes: 16
-                });
-                break;
             case "8/8":
                 this.setState({
                     countCubes: 32
@@ -108,29 +103,35 @@ class BeatTracker extends Component {
                 break;
         }
     };
+    renderSteps = () => {
+        let steps = [];
+        for (let i = 1; i <= this.state.countCubes; i++) {
+            steps.push(<div className="step">{i}</div>);
+        }
+        return <div className="steps-line">{steps}</div>;
+    };
     render() {
         let { bpm } = this.state;
         return (
             <div className="beat-tracker-wrapper">
                 <div className="beat-tracker-controls">
-                    <ReactRadioButtonsGroup
+                    {/* <ReactRadioButtonsGroup
                         group="beat-type"
                         onChange={this.handleChangeBeatType}
                     >
-                        <ReactRadioButton value="4/4">4/4</ReactRadioButton>
                         <ReactRadioButton value="8/8">8/8</ReactRadioButton>
-                    </ReactRadioButtonsGroup>
+                    </ReactRadioButtonsGroup> */}
                     <div className="beat-tracker-control">
                         <button onClick={this.handleStartClick}>Start</button>
                     </div>
                 </div>
+                <Patterns />
                 <div className="sequencer">
                     <div className="beat-line-wrapper">
                         {this.renderBeatLine()}
                     </div>
                     <div className="sequencer-settings">
-                        <Patterns />
-                        <div className="sequencer-equalizer">
+                        {/* <div className="sequencer-equalizer">
                             <Slider
                                 value={this.state.bpm}
                                 vertical={true}
@@ -163,9 +164,10 @@ class BeatTracker extends Component {
                                 step={1}
                                 onChange={this.handleChangeBPM}
                             />
-                        </div>
+                        </div> */}
                     </div>
                 </div>
+                {this.renderSteps()}
             </div>
         );
     }

@@ -1,24 +1,25 @@
 .patterns-wrapper {
     display: flex;
     flex-wrap: wrap;
-    align-content: space-between;
     justify-content: space-around;
-    height: 14.8rem;
-    width: 10rem;
+    padding-bottom: 0.9375rem;
 }
 
 .pattern-item {
-    width: 4.75rem;
-    height: 4.75rem;
+    width: 3.125rem;
+    height: 3.125rem;
     cursor: pointer;
+    margin-right: 0.25rem;
     font-size: 0.75rem;
     color: #e5e5e9;
+    font-weight: 500;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 0.6875rem;
     border-radius: 0.1875rem;
-    background: #252934;
+    background: #3f4244;
+    margin-bottom: 0.25rem;
 }
 
 .pattern-item:hover {

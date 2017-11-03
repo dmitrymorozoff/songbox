@@ -1,6 +1,7 @@
 .beat-tracker-wrapper {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .beat-line-wrapper {
@@ -18,10 +19,6 @@
     margin: 0;
 }
 
-.rc-slider {
-    max-width: 50%;
-}
-
 .rc-slider-rail {
     background: #252934;
 }
@@ -31,7 +28,7 @@
 }
 
 .rc-slider-track {
-    background-color: #31d7da;
+    background-color: #555759;
 }
 
 .beat-tracker-controls {
@@ -59,8 +56,8 @@
     color: #e5e5e9;
 }
 .react-radio-button__control {
-    height: 35px;
-    line-height: 35px;
+    height: 2.1875rem;
+    line-height: 2.1875rem;
 }
 
 .react-radio-button__control {
@@ -84,4 +81,22 @@
     margin-top: 2rem;
     display: flex;
     justify-content: space-between;
+}
+
+.steps-line {
+    display: flex;
+    margin-left: 5rem;
+    border-radius: 0.125rem;
+    background: #313438;
+}
+
+.step {
+    color: rgba(255, 255, 255, 0.4);
+    width: 2.1875rem;
+    height: 2.1875rem;
+    display: flex;
+    font-size: 0.75rem;
+    align-items: center;
+    padding-right: 0.1875rem;
+    justify-content: center;
 }

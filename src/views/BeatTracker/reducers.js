@@ -2,7 +2,7 @@ import { BEAT_TRACKER } from "./actions";
 
 const initialState = {
     trackingStatus: false,
-    bpm: 130,
+    bpm: 146,
     activeBeats: []
 };
 

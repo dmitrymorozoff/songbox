@@ -8,7 +8,7 @@
     font-weight: 500;
     letter-spacing: 0.0625rem;
     color: #e5e5e9;
-    background: #3f4244;
+    background: #282828;
     margin-right: 1rem;
     border-radius: 0.1875rem;
     margin-bottom: 0.1875rem;
@@ -16,6 +16,7 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    transition: 0.2s;
 }
 
 .beatline-beat {
@@ -23,7 +24,7 @@
     height: 2.1875rem;
     border-radius: 0.125rem;
     cursor: pointer;
-    background: #3f4244;
+    background: #282828;
     margin-bottom: 0.1875rem;
     margin-right: 0.1875rem;
     z-index: 999;
@@ -34,7 +35,7 @@
 }
 
 .beatline-beat.tracking {
-    background: #555759;
+    background: rgb(70, 70, 70);
 }
 
 .beatline-beat.active {
@@ -98,21 +99,13 @@
 }
 
 .beatline-beat.divide {
-    background: #555759;
-}
-
-.beatline-title:hover {
-    background: #696c6e;
-}
-
-.beatline-beat:hover {
-    background: #696c6e;
+    background: #3a3a3a;
 }
 
 .beatline {
     display: flex;
     margin-right: 1.25rem;
-    background: rgb(34, 37, 39);
+    background: rgb(20, 20, 20);
 }
 
 @keyframes pulse {
@@ -125,4 +118,74 @@
     100% {
         transform: scale(1);
     }
+}
+
+.beatline-title.noise:hover,
+.beatline-beat.noise:hover {
+    background: #40cfe4;
+}
+
+.beatline-title.kick:hover,
+.beatline-beat.kick:hover {
+    background: #2cb859;
+}
+
+.beatline-title.snare:hover,
+.beatline-beat.snare:hover {
+    background: #ff3980;
+}
+
+.beatline-title.perc:hover,
+.beatline-beat.perc:hover {
+    background: #16a085;
+}
+
+.beatline-title.bleep:hover,
+.beatline-beat.bleep:hover {
+    background: #8e44ad;
+}
+
+.beatline-title.hihat:hover,
+.beatline-beat.hihat:hover {
+    background: #f1c40f;
+}
+
+.beatline-title.conga:hover,
+.beatline-beat.conga:hover {
+    background: #e74c3c;
+}
+
+.beatline-title.digconga:hover,
+.beatline-beat.digconga:hover {
+    background: #3498db;
+}
+
+.beatline-title.lowconga:hover,
+.beatline-beat.lowconga:hover {
+    background: #7c78b7;
+}
+
+.beatline-title.claves:hover,
+.beatline-beat.claves:hover {
+    background: #7cbb00;
+}
+
+.beatline-title.tom:hover,
+.beatline-beat.tom:hover {
+    background: #966e53;
+}
+
+.beatline-title.digerror:hover,
+.beatline-beat.digerror:hover {
+    background: #566cac;
+}
+
+.beatline-title.rimshot:hover,
+.beatline-beat.rimshot:hover {
+    background: #66bbde;
+}
+
+.beatline-title.cymbal:hover,
+.beatline-beat.cymbal:hover {
+    background: #f43f3f;
 }

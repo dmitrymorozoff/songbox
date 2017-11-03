@@ -18,10 +18,11 @@
     align-items: center;
     font-size: 0.6875rem;
     border-radius: 0.1875rem;
-    background: #3f4244;
+    background: #282828;
     margin-bottom: 0.25rem;
+    transition: .2s;
 }
 
 .pattern-item:hover {
-    background: #31d7da;
+    background: #FF554C;
 }

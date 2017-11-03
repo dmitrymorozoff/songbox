@@ -3,13 +3,13 @@
     flex-direction: column;
     width: 100%;
     border-radius: 0.1875rem;
-    background: #2a2d30;
+    background: #1e1e1e;
 }
 
 .navbar {
     display: flex;
     justify-content: center;
-    background-color: #313438;
+    background-color: #282828;
     border-bottom: 1px solid #23272a;
 }
 
@@ -25,10 +25,11 @@
     cursor: pointer;
     transition: 0.3s;
     border-radius: 0.125rem;
+    transition: 0.2s;
 }
 
 .navbar-link:hover {
-    background: #696c6e;
+    background: #7fc146;
 }
 
 button {
@@ -43,7 +44,12 @@ button {
     color: #fff;
     margin: 0.125rem;
     letter-spacing: 0.0625rem;
-    background: #313438;
+    background: #282828;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #ffd300;
 }
 
 .app-content {

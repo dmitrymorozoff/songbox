@@ -270,7 +270,7 @@ class BeatLine extends Component {
         return (
             <div className="beat-line-wrapper">
                 <div className="beatline-wrapper">
-                    <div className="beatline-title">{this.props.title}</div>
+                    <div className={`beatline-title ${this.props.title.toLowerCase()}`}>{this.props.title}</div>
                     <div className="beatline">{this.renderBeatLine()}</div>
                 </div>
             </div>

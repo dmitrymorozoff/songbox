@@ -11,6 +11,7 @@
 .drumpads-wrapper {
     display: flex;
     padding: 0.625rem;
+    padding-top: 1.25rem;
 }
 
 .rc-slider-vertical .rc-slider-rail {
